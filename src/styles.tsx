@@ -7,6 +7,7 @@ export const Button = styled.button`
     border: 3px solid #203040;
     color: white;
     font-size: 25px;
+    padding: 5px;
 `;
 
 export const Input = styled.input`
@@ -26,22 +27,37 @@ export const Container = styled.div`
     padding: 0 2em 2em 2em;
     border-radius: 20px;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1015px) {
         margin: 1em auto;
         width: 70%;
     }
 `;
-
+export const DisplayWeatherContainer = styled.div`
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #8c8c8c;
+    background-color: #f4f2f3;
+    padding: 4px 10px 8px 10px;
+    border-radius: 20px;
+    width: 90%;
+`;
 export const Title = styled.h1`
     text-align: center;
     color: #3b3b3b;
+    font-weight: 600;
+    font-size: 48px;
+    margin-top: 10px;
+    color: #000;
 `;
 
 export const Form = styled.form`
     display: flex;
     justify-content: space-evenly;
-    
-    @media (max-width: 1000px) {
+
+    @media (max-width: 1015px) {
         flex-direction: column;
     }
 `;

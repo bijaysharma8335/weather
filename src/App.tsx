@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Button, Container, Form, Input, Title } from "./styles";
 import DisplayWeather from "./components/DisplayWeather";
@@ -67,25 +67,13 @@ const App: React.FC = () => {
                 `https://api.openweathermap.org/data/2.5/weather?q=${formData.city},${formData.country}&APPID=${APIKEY}`
             )
             .then((res) => {
-                // console.log(res.data);
                 setWeather(res.data);
             });
     };
 
-    useEffect(() => {
-        axios
-            .get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${formData.city},${formData.country}&APPID=${APIKEY}`
-            )
-            .then((res) => {
-                // console.log(res.data);
-                setWeather(res.data);
-            });
-    }, []);
-
     return (
         <Container>
-            <Title>Weather APP</Title>
+            <Title>Weather App</Title>
             <Form onSubmit={handleSubmit}>
                 <Input
                     type="text"
@@ -103,8 +91,9 @@ const App: React.FC = () => {
                     onChange={onChangeHandler}
                     required
                 />
-
-                <Button type="submit">Submit</Button>
+                <div>
+                    <Button type="submit">Submit</Button>
+                </div>
             </Form>
 
             {weather && (

@@ -3,20 +3,12 @@ import { Flex, Main, WeatherDetail } from "../styles";
 
 interface WeatherProps {
     weather: {
-        coord: {
-            lon: number;
-            lat: number;
-        };
-        temperature: number;
-
-        conditions: string;
         weather: {
             id: number;
             main: string;
             description: string;
             icon: string;
         }[];
-        base: string;
         main: {
             temp: number;
             feels_like: number;
@@ -30,10 +22,6 @@ interface WeatherProps {
             speed: number;
             deg: number;
         };
-        clouds: {
-            all: number;
-        };
-        dt: number;
         sys: {
             type: number;
             id: number;
