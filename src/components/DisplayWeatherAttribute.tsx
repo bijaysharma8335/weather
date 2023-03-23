@@ -8,7 +8,7 @@ interface WeatherProps {
             lat: number;
         };
         temperature: number;
-    
+
         conditions: string;
         weather: {
             id: number;

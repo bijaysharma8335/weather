@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Container, Form, Input, Title } from "./styles";
 import DisplayWeather from "./components/DisplayWeather";
@@ -53,7 +53,7 @@ type weatherData = {
 
 const App: React.FC = () => {
     const [weather, setWeather] = useState<weatherData | null>(null);
-    const [formData, setFormData] = useState({ city: "", country: "" });
+    const [formData, setFormData] = useState({ city: "Bangalore", country: "India" });
 
     const onChangeHandler = (e: any) => {
         e.preventDefault();
@@ -71,6 +71,18 @@ const App: React.FC = () => {
                 setWeather(res.data);
             });
     };
+
+    useEffect(() => {
+        axios
+            .get(
+                `https://api.openweathermap.org/data/2.5/weather?q=${formData.city},${formData.country}&APPID=${APIKEY}`
+            )
+            .then((res) => {
+                // console.log(res.data);
+                setWeather(res.data);
+            });
+    }, []);
+
     return (
         <Container>
             <Title>Weather APP</Title>

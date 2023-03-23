@@ -25,6 +25,11 @@ export const Container = styled.div`
     border: 3px dashed #8c8c8c;
     padding: 0 2em 2em 2em;
     border-radius: 20px;
+
+    @media (max-width: 1000px) {
+        margin: 1em auto;
+        width: 70%;
+    }
 `;
 
 export const Title = styled.h1`
@@ -35,6 +40,10 @@ export const Title = styled.h1`
 export const Form = styled.form`
     display: flex;
     justify-content: space-evenly;
+    
+    @media (max-width: 1000px) {
+        flex-direction: column;
+    }
 `;
 
 export const Main = styled.div`
@@ -57,9 +66,11 @@ export const Flex = styled.div`
 export const WeatherDetail = styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+    }
 `;
-
-
 
 export const SpanOne = styled.span`
     margin: 0 inherit;
